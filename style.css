@@ -1,0 +1,173 @@
+body{
+    margin: 0;
+    /*  091 Eternal Constance  */
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
+:root{
+  --primary-gradient:  linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.wrapper{
+  height: 90vh;
+  width: 80vw;
+  max-width: 1100px;
+  margin: 2rem auto;
+  /* 069 Purple Division */
+  background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+  box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.4);
+  border-radius: .2rem;
+  position: relative;
+}
+
+.mobile-view{
+  position: absolute;
+  top: 0%;
+  display: none;
+}
+.mobile-view img{
+  width: 100%;
+}
+ .tablet-view{
+   position: absolute;
+   top: 0%;
+   display: none;
+}
+.tablet-view img{
+  width: 100%;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Buttons */
+.container .title{
+  width: 90%;
+  height: 20%;
+  text-align: center;  
+  padding: 2rem 2rem;
+  margin: 9rem 0;
+  z-index: 9999;
+}
+.container h1{
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 3em;
+  color: aliceblue;
+}
+
+.container p{
+  font-family: 'Muli', sans-serif;
+  color: #ececf0bd;
+}
+
+button{
+  font-family: 'Muli', sans-serif;
+  color: black;
+  font-size: 1rem;
+  padding: .8rem 2.3rem;
+  margin: 0 .1rem;
+  border: 0;
+  border-radius: 3rem;
+  background: var(--primary-gradient);
+  cursor: pointer;
+}
+
+.clip-svg {
+    clip-path: url(#myClip);
+  }
+
+
+  /***********Car Animation *******/
+
+  
+.night{
+    height: 560px;
+    width: 700px;
+    background:url('./assets/background.png');  
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.surface{
+  height: 140px;
+  width: 500%;
+  display: block;
+  background:url('./assets/Img_02.png');
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  background-repeat: repeat-x;
+}
+
+.moveRight{
+  animation: moveRight 6s linear infinite;
+}
+
+@keyframes moveRight{
+  100%{
+    transform: translateX(-2950px);
+  }
+}
+
+/* Made Changes */
+.car{
+  position: absolute;
+  bottom: 43px;
+  left: 24%;
+}
+
+.suspension{
+  animation: suspension 1s linear infinite;
+}
+
+@keyframes suspension{
+  100%{transform: translateY(-1px);}
+  50%{transform: translateY(2px);}
+  0%{transform: translateY(-1px);}
+}
+
+
+/* Responsive */
+@media only screen and (max-width: 1013px){
+  .graphic{
+    display: none;
+  }
+  .container{
+    grid-template-columns: 100%;
+  }
+  .tablet-view{
+    display: block;
+  }
+  .container .title{
+    padding: 0 .9rem;
+  }
+  .container .title h1{
+    font-size: 2rem;
+  }
+  .container .title{
+    margin: 3rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 678px){
+  .tablet-view{
+    display: none;
+  }
+  .mobile-view{
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 402px){
+  .mobile-view{
+    display: none;
+  }
+  .container .title{
+    margin:0;
+  }
+}
